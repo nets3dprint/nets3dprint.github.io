@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DForge | Impressão 3D de Alta Precisão</title>
+    <style>
+        /* Reset e Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff6b6b;
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        /* Serviços / Benefícios */
+        .features {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* CTA / Formulário */
+        .cta-section {
+            background: #f1f3f5;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 30px auto 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-btn {
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-btn:hover {
+            background: #0056b3;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="logo">🧬 3DForge</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Traga suas Ideias para o Mundo Real</h1>
+            <p>Impressão 3D de alta precisão para protótipos, peças de reposição e projetos personalizados.</p>
+            <a href="#orcamento" class="btn">Solicitar Orçamento Grátis</a>
+        </div>
+    </header>
+
+    <!-- Seção de Benefícios -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Por que escolher nossos serviços?</h2>
+            <div class="grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Máxima Precisão</h3>
+                    <p>Trabalhamos com impressoras de última geração (FDM e Resina) para garantir fidelidade milimétrica ao seu modelo digital.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Produção ágil e otimizada para que você receba suas peças no menor tempo possível, sem comprometer a qualidade.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <h3>Materiais Diversos</h3>
+                    <p>Impressão em PLA, ABS, PETG, Flexível e Resina de alta definição, adequados para qualquer tipo de aplicação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de CTA / Contato -->
+    <section id="orcamento" class="cta-section">
+        <div class="container">
+            <h2>Pronto para começar?</h2>
+            <p>Envie os detalhes do seu projeto (ou arquivo .STL/.OBJ) e nossa equipe responderá com um orçamento em poucas horas.</p>
+            
+            <div class="form-container">
+                <form action="#" method="POST" onsubmit="alert('Obrigado! Entraremos em contato em breve.'); return false;">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Detalhes do Projeto</label>
+                        <textarea id="mensagem" rows="4" placeholder="Descreva o tamanho, material de preferência ou a finalidade da peça..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-btn">Enviar Projeto</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 3DForge Impressão 3D. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
