@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nets3D — Serviços de Impressão 3D Sob Medida</title>
+<meta name="description" content="Transformamos seus projetos em realidade com impressão 3D de alta precisão. Peças de reposição, protótipos, miniaturas e brindes personalizados. Faça seu orçamento.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="nets3d.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="header" id="topo">
+  <div class="header-inner">
+    <a href="#topo" class="brand" aria-label="Nets3D — Início">
+      <img src="nets3d.png" alt="Logo Nets3D" class="brand-mark" width="36" height="36" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+      <span class="brand-mark-fallback" aria-hidden="true" style="display:none;"><span class="brand-fallback-ring"></span></span>
+      <span class="brand-name">Nets<em>3D</em></span>
+    </a>
+
+    <nav class="nav" id="navMenu" aria-label="Navegação principal">
+      <a href="#topo">Início</a>
+      <a href="#servicos">O que fazemos</a>
+      <a href="#trabalhos">Casos Reais</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Orçamento</a>
+      <a class="btn btn-primary btn-whatsapp nav-cta-mobile" href="#" data-whatsapp-link target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.82.82-3-.2-.32A8.2 8.2 0 1 1 12 20.2Zm4.5-6.15c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+        <span>Fale no WhatsApp</span>
+      </a>
+    </nav>
+
+    <a class="btn btn-primary btn-whatsapp header-cta" href="#" data-whatsapp-link target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.82.82-3-.2-.32A8.2 8.2 0 1 1 12 20.2Zm4.5-6.15c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+      <span>Fale no WhatsApp</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero-section">
+    <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-inner-split">
+      <div class="hero-left-content">
+        <p class="eyebrow-tech">SERVIÇO PROFISSIONAL DE IMPRESSÃO 3D</p>
+        <h1 class="hero-title">
+          Transformamos os seus projetos em <span class="glow-text">Objetos Reais</span>
+        </h1>
+        <p class="hero-subtitle">
+          Envie o seu arquivo ou referência e fabricamos sob medida: de <strong>peças de reposição</strong> e <strong>protótipos funcionais</strong> a <strong>miniaturas colecionáveis</strong> e brindes.
+        </p>
+
+        <div class="hero-comercial-badges">
+          <span class="badge">✓ Peças Sob Medida</span>
+          <span class="badge">✓ Alta Precisão</span>
+          <span class="badge">✓ Sem Pedido Mínimo</span>
+        </div>
+
+        <div class="hero-actions-row">
+          <a class="btn btn-primary btn-whatsapp" href="#" data-whatsapp-link target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.82.82-3-.2-.32A8.2 8.2 0 1 1 12 20.2Zm4.5-6.15c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+            <span>Orçar Peça no WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="#servicos">Ver o que fazemos</a>
+        </div>
+      </div>
+
+      <div class="hero-right-slideshow">
+        <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+        
+        <div class="spline-hud-label" aria-hidden="true">
+          <span class="hud-dot"></span> PRODUTOS REAIS IMPRESSOS POR NÓS
+        </div>
+
+        <div class="hero-carousel-container" id="heroAutoCarousel">
+          <div class="hero-carousel-slide active"><img src="pictures/foto1.jpg" alt="Miniatura de RPG" onerror="this.src='https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=600'"></div>
+          <div class="hero-carousel-slide"><img src="pictures/foto2.jpg" alt="Vaso Decorativo 3D" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600'"></div>
+          <div class="hero-carousel-slide"><img src="pictures/foto3.jpg" alt="Protótipo Mecânico" onerror="this.src='https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=600'"></div>
+          <div class="hero-carousel-slide"><img src="pictures/foto4.jpg" alt="Peça de Reposição" onerror="this.src='https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600'"></div>
+          <div class="hero-carousel-slide"><img src="pictures/foto5.jpg" alt="Presente Personalizado" onerror="this.src='https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600'"></div>
+        </div>
+        <div class="hero-carousel-dots" id="heroCarouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="section-inner">
+      <p class="eyebrow reveal">SOLUÇÕES</p>
+      <h2 class="section-title reveal">O que nós imprimimos para você</h2>
+      <p class="section-lead reveal">Soluções práticas sob demanda. Traga o seu problema ou a sua ideia e nós materializamos.</p>
+
+      <div class="cards-grid">
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle class="ic-orbit" cx="24" cy="24" r="17"/><circle class="ic-node" cx="24" cy="24" r="3"/><path class="ic-glyph" d="M16 30 24 16l8 14H16Z"/></svg>
+          </span>
+          <h3>Protótipos &amp; Peças Funcionais</h3>
+          <p>Do rascunho ao produto real. Perfeito para engenharia, arquitetura e inventores validarem projetos rapidamente.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle class="ic-orbit" cx="24" cy="24" r="17"/><circle class="ic-node" cx="24" cy="24" r="3"/><path class="ic-glyph" d="M20 16h-4v4M28 16h4v4M20 32h-4v-4M28 32h4v-4M18 24h12" /></svg>
+          </span>
+          <h3>Peças de Reposição Especiais</h3>
+          <p>Aquela engrenagem ou componente que quebrou e já não se vende no mercado? Nós redesenhamos e fabricamos uma nova.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle class="ic-orbit" cx="24" cy="24" r="17"/><circle class="ic-node" cx="24" cy="24" r="3"/><path class="ic-glyph" d="M24 14l3 6 6 1-4.5 4.5L29.5 32 24 28.5 18.5 32l1-6.5L15 21l6-1 3-6Z"/></svg>
+          </span>
+          <h3>Brindes &amp; Logos Corporativos</h3>
+          <p>A marca da sua empresa em chaveiros, displays de mesa ou troféus exclusivos. Fortaleça sua identidade visual em pequenos lotes.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle class="ic-orbit" cx="24" cy="24" r="17"/><circle class="ic-node" cx="24" cy="24" r="3"/><path class="ic-glyph" d="M24 12v6M18 26h12l-2 8H20l-2-8Z"/></svg>
+          </span>
+          <h3>Miniaturas &amp; Colecionáveis</h3>
+          <p>Action figures, peças exclusivas para RPG, board games e bustos personalizados com excelente nível de detalhes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--void" id="trabalhos">
+    <div class="section-inner">
+      <p class="eyebrow reveal">PORTFÓLIO</p>
+      <h2 class="section-title reveal">Trabalhos reais enviados aos clientes</h2>
+      
+      <div class="slideshow reveal" id="slideshow">
+        <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+        <div class="slideshow-scanlines" aria-hidden="true"></div>
+
+        <div class="slides" id="slides">
+          <figure class="slide is-active"><img src="pictures/foto1.jpg" alt="Miniatura de RPG" loading="lazy"><figcaption>Miniaturas Colecionáveis de Alta Resolução</figcaption></figure>
+          <figure class="slide"><img src="pictures/foto2.jpg" alt="Vaso Geométrico" loading="lazy"><figcaption>Objetos de Decoração e Design Exclusivos</figcaption></figure>
+          <figure class="slide"><img src="pictures/foto3.jpg" alt="Peça Mecânica" loading="lazy"><figcaption>Protótipos Industriais e Ajustes de Engenharia</figcaption></figure>
+          <figure class="slide"><img src="pictures/foto4.jpg" alt="Peça de Reposição" loading="lazy"><figcaption>Componentes de Reposição e Manutenção Técnica</figcaption></figure>
+          <figure class="slide"><img src="pictures/foto5.jpg" alt="Presente em 3D" loading="lazy"><figcaption>Presentes e Logotipos Personalizados sob Encomenda</figcaption></figure>
+        </div>
+
+        <button class="slide-arrow slide-arrow--prev" id="slidePrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="slide-arrow slide-arrow--next" id="slideNext" aria-label="Próximo">
+          <svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="slide-dots" id="slideDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <div class="section-inner">
+      <p class="eyebrow reveal">PROCESSO DIRETO</p>
+      <h2 class="section-title reveal">Como pedir o seu orçamento</h2>
+
+      <ol class="timeline">
+        <li class="timeline-step reveal">
+          <span class="timeline-index">01</span>
+          <h3>Envie a Ideia ou Arquivo</h3>
+          <p>Mande fotos, medidas, referências ou arquivos STL/OBJ direto no nosso WhatsApp.</p>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-index">02</span>
+          <h3>Aprovação Instantânea</h3>
+          <p>Avaliamos a viabilidade técnica e passamos-lhe o valor final de forma descomplicada.</p>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-index">03</span>
+          <h3>Produção em Alta Velocidade</h3>
+          <p>A sua peça é fatiada, impressa com matéria-prima de qualidade e finalizada manualmente.</p>
+        </li>
+        <li class="timeline-step reveal">
+          <span class="timeline-index">04</span>
+          <h3>Retirada ou Envio</h3>
+          <p>Pode retirar diretamente connosco ou enviamos com proteção total para a sua morada.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--void" id="contato">
+    <div class="section-inner contato-grid">
+      <div class="contato-copy reveal">
+        <p class="eyebrow">FAÇA SEU ORÇAMENTO</p>
+        <h2 class="section-title">Tem um projeto em mente? Vamos fazer acontecer.</h2>
+        <p class="section-lead">Clique abaixo para iniciar atendimento humano e especializado. Sem filas, direto no WhatsApp.</p>
+        <a class="btn btn-primary btn-whatsapp" href="#" data-whatsapp-link target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.82.82-3-.2-.32A8.2 8.2 0 1 1 12 20.2Zm4.5-6.15c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+          <span>Iniciar Orçamento Grátis</span>
+        </a>
+        <p class="contato-numero"><span id="numeroWhats">(19) 98294-4476</span></p>
+      </div>
+
+      <div class="contato-qr reveal">
+        <div class="qr-panel">
+          <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+          <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+          <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+          <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+          <p class="qr-label">ESCANEIE O QR CODE</p>
+          <div id="qrcode" class="qr-code"></div>
+          <p class="qr-hint">Fale Conosco Agora</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="#topo" class="brand brand--footer">
+      <img src="nets3d.png" alt="Logo Nets3D" class="brand-mark" width="28" height="28" onerror="this.style.display='none';">
+      <span class="brand-name">Nets<em>3D</em></span>
+    </a>
+    <p class="footer-copy">© <span id="anoAtual">2026</span> Nets3D. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
