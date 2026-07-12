@@ -117,17 +117,13 @@
         <div class="spline-hud-label" aria-hidden="true">
           <span class="hud-dot"></span> NETS3D · MODELO INTERATIVO
         </div>
-        <!-- Spline robot scene — interativo no browser, sem backend -->
-        <iframe
-          id="splineRobot"
-          src="https://my.spline.design/robotfollowcursorforlandingpage-Bv7JMniMHQR3gGVp/"
-          frameborder="0"
-          loading="lazy"
-          title="Robô 3D interativo Nets3D"
-          allow="autoplay"
+        <!-- Canvas Spline — carregado via @splinetool/runtime (sem iframe, sem 403) -->
+        <canvas
+          id="splineCanvas"
           class="spline-frame"
-        ></iframe>
-        <!-- Loader enquanto o iframe carrega -->
+          aria-label="Robô 3D interativo"
+        ></canvas>
+        <!-- Loader enquanto a cena carrega -->
         <div class="spline-loader" id="splineLoader" aria-hidden="true">
           <div class="spline-loader-ring"></div>
           <p>carregando robô…</p>
@@ -373,6 +369,34 @@
 
 <!-- Biblioteca leve para gerar o QR code no navegador (sem backend) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- Spline Runtime — carrega a cena 3D do robô direto no canvas, sem iframe -->
+<script type="module">
+  import { Application } from 'https://unpkg.com/@splinetool/runtime@1.9.28/build/runtime.js';
+
+  const canvas  = document.getElementById('splineCanvas');
+  const loader  = document.getElementById('splineLoader');
+
+  if (canvas) {
+    // 📌 Para trocar a cena do Spline, substitua a URL abaixo pelo seu .splinecode:
+    const SPLINE_SCENE = 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode';
+
+    const app = new Application(canvas);
+    app.load(SPLINE_SCENE)
+      .then(() => {
+        if (loader) loader.classList.add('is-loaded');
+      })
+      .catch((err) => {
+        console.warn('Spline: não foi possível carregar a cena.', err);
+        // Se falhar, exibe o átomo CSS no lugar
+        if (loader) loader.classList.add('is-loaded');
+        const fallback = document.getElementById('splineFallback');
+        if (fallback) fallback.style.display = 'flex';
+        if (canvas)  canvas.style.display    = 'none';
+      });
+  }
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
