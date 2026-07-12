@@ -57,40 +57,86 @@
 
 <main>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
+
+  <!-- ===================== HERO — SPLIT LAYOUT ===================== -->
+  <section class="hero" id="hero-section">
+    <!-- Spotlight que segue o mouse -->
+    <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
+    <!-- Grid de fundo -->
     <div class="hero-grid" aria-hidden="true"></div>
 
-    <!-- Elemento assinatura: átomo em CSS puro, eco da logo -->
-    <div class="atom" aria-hidden="true">
-      <div class="atom-core"></div>
-      <div class="atom-ring atom-ring--1"><span class="atom-electron-orbit"><span class="atom-electron"></span></span></div>
-      <div class="atom-ring atom-ring--2"><span class="atom-electron-orbit"><span class="atom-electron"></span></span></div>
-      <div class="atom-ring atom-ring--3"><span class="atom-electron-orbit"><span class="atom-electron"></span></span></div>
-    </div>
+    <div class="hero-split">
 
-    <div class="hero-content">
-      <p class="eyebrow">IMPRESSÃO 3D SOB MEDIDA</p>
-      <h1 class="hero-title">
-        Sua ideia sai da tela<br>
-        e vira <span class="glow-text">objeto real</span>.
-      </h1>
-      <p class="hero-subtitle">
-        A Nets3D imprime miniaturas, peças, presentes e protótipos com precisão,
-        do arquivo digital direto pra sua mão.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-whatsapp" href="#" data-whatsapp-link target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.82.82-3-.2-.32A8.2 8.2 0 1 1 12 20.2Zm4.5-6.15c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
-          <span>Orçar no WhatsApp</span>
-        </a>
-        <a class="btn btn-ghost" href="#trabalhos">
-          Ver trabalhos
-          <svg viewBox="0 0 24 24" class="icon-arrow" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <!-- ——— LADO ESQUERDO: texto + trabalhos auto-apresentados ——— -->
+      <div class="hero-left">
+        <p class="eyebrow">IMPRESSÃO 3D SOB MEDIDA</p>
+
+        <h1 class="hero-title">
+          Sua ideia vira<br>
+          <span class="glow-text" id="heroTypewriter"></span><span class="typewriter-cursor" aria-hidden="true">|</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A Nets3D transforma arquivos digitais em objetos físicos com precisão —
+          do protótipo ao presente personalizado.
+        </p>
+
+        <!-- Auto-apresentação dos trabalhos -->
+        <div class="hero-showcase" id="heroShowcase" aria-live="polite" aria-label="Destaque de trabalho atual">
+          <div class="showcase-badge">
+            <span class="showcase-dot" aria-hidden="true"></span>
+            <span class="showcase-label" id="showcaseLabel">IMPRESSÃO ATIVA</span>
+          </div>
+          <div class="showcase-cards-wrap">
+            <!-- Os cards são gerados pelo JS -->
+          </div>
+          <!-- Indicadores de progresso -->
+          <div class="showcase-progress" id="showcaseProgress" aria-hidden="true"></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-whatsapp" href="#" data-whatsapp-link target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="icon-wa" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.82.82-3-.2-.32A8.2 8.2 0 1 1 12 20.2Zm4.5-6.15c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+            <span>Orçar no WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="#servicos">
+            Ver serviços
+            <svg viewBox="0 0 24 24" class="icon-arrow" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
+
+      <!-- ——— LADO DIREITO: robô Spline 3D interativo ——— -->
+      <div class="hero-right" aria-label="Robô 3D interativo Nets3D">
+        <!-- Canto HUD decorativos -->
+        <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+        <!-- Label HUD -->
+        <div class="spline-hud-label" aria-hidden="true">
+          <span class="hud-dot"></span> NETS3D · MODELO INTERATIVO
+        </div>
+        <!-- Spline robot scene — interativo no browser, sem backend -->
+        <iframe
+          id="splineRobot"
+          src="https://my.spline.design/robotfollowcursorforlandingpage-Bv7JMniMHQR3gGVp/"
+          frameborder="0"
+          loading="lazy"
+          title="Robô 3D interativo Nets3D"
+          allow="autoplay"
+          class="spline-frame"
+        ></iframe>
+        <!-- Loader enquanto o iframe carrega -->
+        <div class="spline-loader" id="splineLoader" aria-hidden="true">
+          <div class="spline-loader-ring"></div>
+          <p>carregando robô…</p>
+        </div>
+      </div>
+
     </div>
   </section>
+
 
   <!-- ===================== O QUE FAZEMOS ===================== -->
   <section class="section" id="servicos">

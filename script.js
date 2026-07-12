@@ -16,6 +16,171 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------
+     HERO — SPOTLIGHT (segue o mouse)
+     ------------------------------------------------------------------ */
+  const spotlight = document.getElementById('heroSpotlight');
+  const heroSection = document.getElementById('hero-section');
+  if (spotlight && heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      spotlight.style.left = (e.clientX - rect.left) + 'px';
+      spotlight.style.top  = (e.clientY - rect.top)  + 'px';
+    });
+    heroSection.addEventListener('mouseleave', () => {
+      // Retorna pro centro suavemente
+      spotlight.style.left = '50%';
+      spotlight.style.top  = '50%';
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     HERO — TYPEWRITER (título)
+     ------------------------------------------------------------------ */
+  const typewriterEl = document.getElementById('heroTypewriter');
+  if (typewriterEl) {
+    // 📌 Frases do typewriter — edite aqui para personalizar:
+    const phrases = [
+      'objeto real.',
+      'miniatura única.',
+      'peça sob medida.',
+      'presente perfeito.',
+      'protótipo funcional.',
+      'brinde inesquecível.',
+    ];
+    let phraseIdx = 0, charIdx = 0, deleting = false;
+    const TYPE_SPEED = 65, DELETE_SPEED = 35, PAUSE_FULL = 2200, PAUSE_EMPTY = 400;
+
+    function typeStep() {
+      const current = phrases[phraseIdx];
+      if (!deleting) {
+        typewriterEl.textContent = current.slice(0, ++charIdx);
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(typeStep, PAUSE_FULL);
+          return;
+        }
+      } else {
+        typewriterEl.textContent = current.slice(0, --charIdx);
+        if (charIdx === 0) {
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+          setTimeout(typeStep, PAUSE_EMPTY);
+          return;
+        }
+      }
+      setTimeout(typeStep, deleting ? DELETE_SPEED : TYPE_SPEED);
+    }
+    setTimeout(typeStep, 600);
+  }
+
+  /* ------------------------------------------------------------------
+     HERO — SHOWCASE (auto-apresentação de trabalhos)
+     ------------------------------------------------------------------ */
+  const showcaseWrap = document.querySelector('.showcase-cards-wrap');
+  const progressWrap = document.getElementById('showcaseProgress');
+  if (showcaseWrap && progressWrap) {
+    // 📌 Lista de trabalhos do showcase — edite título, desc, tag e img (caminhos em pictures/)
+    const works = [
+      { title: 'Miniatura de RPG', desc: 'Personagem pintado à mão com riqueza de detalhes.', tag: 'MINIATURAS', img: 'pictures/foto1.jpg' },
+      { title: 'Vaso Decorativo', desc: 'Design geométrico Voronoi em PLA branco fosco.', tag: 'DECORAÇÃO', img: 'pictures/foto2.jpg' },
+      { title: 'Protótipo Mecânico', desc: 'Conjunto de engrenagens para validação de projeto.', tag: 'PROTÓTIPOS', img: 'pictures/foto3.jpg' },
+      { title: 'Peça de Reposição', desc: 'Componente recriado para eletrodoméstico descontinuado.', tag: 'REPOSIÇÃO', img: 'pictures/foto4.jpg' },
+      { title: 'Presente Personalizado', desc: 'Plaquinha com nome em filamento rose gold.', tag: 'PRESENTES', img: 'pictures/foto5.jpg' },
+    ];
+
+    const SHOWCASE_INTERVAL = 3800; // ms entre trocas
+    let showcaseCurrent = 0;
+    let showcaseTimer = null;
+    const showcaseFills = [];
+
+    // Cria os cards e barras de progresso
+    works.forEach((w, i) => {
+      // Card
+      const card = document.createElement('div');
+      card.className = 'showcase-card' + (i === 0 ? ' is-active' : '');
+
+      // Imagem
+      const img = document.createElement('img');
+      img.src = w.img;
+      img.alt = w.title;
+      img.className = 'showcase-card-img';
+      img.loading = 'lazy';
+      img.onerror = function() {
+        // Placeholder se imagem não existir
+        const ph = document.createElement('div');
+        ph.className = 'showcase-card-img-placeholder';
+        ph.textContent = '3D';
+        card.replaceChild(ph, this);
+      };
+
+      const info = document.createElement('div');
+      info.className = 'showcase-card-info';
+      info.innerHTML = `
+        <p class="showcase-card-title">${w.title}</p>
+        <p class="showcase-card-desc">${w.desc}</p>
+        <span class="showcase-card-tag">${w.tag}</span>
+      `;
+
+      card.appendChild(img);
+      card.appendChild(info);
+      showcaseWrap.appendChild(card);
+
+      // Barra de progresso
+      const bar = document.createElement('div');
+      bar.className = 'showcase-bar';
+      const fill = document.createElement('div');
+      fill.className = 'showcase-bar-fill';
+      bar.appendChild(fill);
+      progressWrap.appendChild(bar);
+      showcaseFills.push(fill);
+    });
+
+    const showcaseCards = Array.from(showcaseWrap.children);
+
+    function showcaseGoTo(idx) {
+      // Reseta todos
+      showcaseCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+      showcaseFills.forEach((f, i) => {
+        f.style.transition = 'none';
+        f.style.width = i < idx ? '100%' : '0%';
+      });
+      // Anima a barra atual
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          showcaseFills[idx].style.transition = `width ${SHOWCASE_INTERVAL}ms linear`;
+          showcaseFills[idx].style.width = '100%';
+        });
+      });
+    }
+
+    function showcaseNext() {
+      showcaseCurrent = (showcaseCurrent + 1) % works.length;
+      showcaseGoTo(showcaseCurrent);
+    }
+
+    function startShowcase() {
+      showcaseTimer = setInterval(showcaseNext, SHOWCASE_INTERVAL);
+    }
+
+    showcaseGoTo(0);
+    startShowcase();
+  }
+
+  /* ------------------------------------------------------------------
+     SPLINE — esconde o loader quando o iframe carrega
+     ------------------------------------------------------------------ */
+  const splineIframe = document.getElementById('splineRobot');
+  const splineLoader = document.getElementById('splineLoader');
+  if (splineIframe && splineLoader) {
+    splineIframe.addEventListener('load', () => {
+      splineLoader.classList.add('is-loaded');
+    });
+    // Fallback: esconde o loader após 8s mesmo que o evento não dispare
+    setTimeout(() => splineLoader.classList.add('is-loaded'), 8000);
+  }
+
+
+  /* ------------------------------------------------------------------
      MENU MOBILE
      ------------------------------------------------------------------ */
   const navToggle = document.getElementById('navToggle');
